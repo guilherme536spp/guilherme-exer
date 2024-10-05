@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Bebidas</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { margin: 20px; }
+        input, button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Bebidas</h1>
+        
+        <h2>Vinho</h2>
+        <input type="text" id="vinhoNome" placeholder="Nome do Vinho">
+        <input type="number" id="vinhoPreco" placeholder="Preço">
+        <button onclick="mostrarVinho()">Mostrar Vinho</button>
+        <button onclick="verificarPrecoVinho()">Verificar Preço</button>
+        
+        <h2>Refrigerante</h2>
+        <input type="text" id="refrigeranteNome" placeholder="Nome do Refrigerante">
+        <input type="number" id="refrigerantePreco" placeholder="Preço">
+        <button onclick="mostrarRefrigerante()">Mostrar Refrigerante</button>
+        <button onclick="verificarPrecoRefrigerante()">Verificar Preço</button>
+        
+        <h2>Suco</h2>
+        <input type="text" id="sucoNome" placeholder="Nome do Suco">
+        <input type="number" id="sucoPreco" placeholder="Preço">
+        <button onclick="mostrarSuco()">Mostrar Suco</button>
+        <button onclick="verificarPrecoSuco()">Verificar Preço</button>
+        
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function mostrarVinho() {
+            const nome = document.getElementById('vinhoNome').value;
+            const preco = document.getElementById('vinhoPreco').value;
+            document.getElementById('resultado').innerText = `Vinho: ${nome}, Preço: ${preco}`;
+        }
+
+        function verificarPrecoVinho() {
+            const preco = parseFloat(document.getElementById('vinhoPreco').value);
+            const resultado = preco < 25 ? 'Preço válido para Vinho' : 'Preço inválido para Vinho';
+            document.getElementById('resultado').innerText = resultado;
+        }
+
+        function mostrarRefrigerante() {
+            const nome = document.getElementById('refrigeranteNome').value;
+            const preco = document.getElementById('refrigerantePreco').value;
+            document.getElementById('resultado').innerText = `Refrigerante: ${nome}, Preço: ${preco}`;
+        }
+
+        function verificarPrecoRefrigerante() {
+            const preco = parseFloat(document.getElementById('refrigerantePreco').value);
+            const resultado = preco < 5 ? 'Preço válido para Refrigerante' : 'Preço inválido para Refrigerante';
+            document.getElementById('resultado').innerText = resultado;
+        }
+
+        function mostrarSuco() {
+            const nome = document.getElementById('sucoNome').value;
+            const preco = document.getElementById('sucoPreco').value;
+            document.getElementById('resultado').innerText = `Suco: ${nome}, Preço: ${preco}`;
+        }
+
+        function verificarPrecoSuco() {
+            const preco = parseFloat(document.getElementById('sucoPreco').value);
+            const resultado = preco < 2.5 ? 'Preço válido para Suco' : 'Preço inválido para Suco';
+            document.getElementById('resultado').innerText = resultado;
+        }
+    </script>
+</body>
+</html>
